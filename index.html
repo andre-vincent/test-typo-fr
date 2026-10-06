@@ -6,14 +6,11 @@
   <title>Haute Typographie Classless & Sémantique - Ordinals & Numéros</title>
   <style>
     /* --- IMPORTS DE LA POLICE (FRANÇAIS UNIQUEMENT) --- */
-    @import url("https://jsdelivr.net");
-    @import url("https://jsdelivr.net");
-    @import url("https://jsdelivr.net");
-    @import url("https://jsdelivr.net");
-
+    @import url("fonts.css");
+    
     /* --- TYPOGRAPHIE FLUIDE & CONFIGURATION GLOBALE --- */
     html {
-      font-family: "EB Garamond Variable", serif;
+      font-family: var(--font-humanist), serif;
       /* Typographie fluide : varie de 16px (1rem) à 22px (1.375rem) selon l'écran */
       font-size: clamp(1rem, 0.85rem + 0.75vw, 1.375rem);
       line-height: 1.6;
