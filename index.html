@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haute Typographie Classless & Sémantique - Ordinals & Numéros</title>
+  <style>
+    /* --- IMPORTS DE LA POLICE (FRANÇAIS UNIQUEMENT) --- */
+    @import url("https://jsdelivr.net");
+    @import url("https://jsdelivr.net");
+    @import url("https://jsdelivr.net");
+    @import url("https://jsdelivr.net");
+
+    /* --- TYPOGRAPHIE FLUIDE & CONFIGURATION GLOBALE --- */
+    html {
+      font-family: "EB Garamond Variable", serif;
+      /* Typographie fluide : varie de 16px (1rem) à 22px (1.375rem) selon l'écran */
+      font-size: clamp(1rem, 0.85rem + 0.75vw, 1.375rem);
+      line-height: 1.6;
+      color: #2c2c2c;
+      background-color: #fdfbf7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- MISE EN PAGE INTRINSÈQUE ET ADAPTIVE (GRID LAYOUT) --- */
+    body {
+      display: grid;
+      /* Grille adaptative restreinte à un maximum de 54 caractères de large */
+      grid-template-columns: minmax(1rem, 1fr) minmax(auto, 54ch) minmax(1rem, 1fr);
+      row-gap: 2.5rem;
+      margin: 0;
+      padding: 2rem 0;
+    }
+
+    /* Placement automatique de tous les blocs majeurs dans la colonne centrale */
+    body > header,
+    body > main,
+    body > footer {
+      grid-column: 2;
+    }
+
+    /* --- CONFIGURATION OPENTYPE GLOBALE ET TEXTE COURANT --- */
+    main {
+      font-variant-ligatures: common-ligatures contextual;
+      font-variant-numeric: oldstyle-nums; /* Chiffres elzéviriens par défaut */
+      font-kerning: normal;
+      text-align: justify;
+    }
+
+    /* Layout intrinsèque pour l'article et ses sections */
+    article {
+      display: grid;
+      row-gap: 2rem;
+    }
+
+    header {
+      border-bottom: 1px solid #e0dacb;
+      padding-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      color: #1a1a1a;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.5rem; margin-top: 1.5rem; }
+
+    /* --- APPLICATION SÉMANTIQUE DES CARACTÉRISTIQUES OPENTYPE --- */
+
+    /* Petites capitales pour les siècles, sigles ou termes mis en valeur */
+    abbr, time, dfn {
+      font-variant-caps: small-caps;
+      letter-spacing: 0.05em;
+      font-style: normal;
+    }
+
+    /* Vrais exposants (superscript) natifs sans casser l'interlignage */
+    sup {
+      font-variant-position: super;
+      font-size: inherit;
+      line-height: inherit;
+      vertical-align: baseline;
+    }
+
+    /* Gestion sémantique des dialogues */
+    blockquote {
+      margin: 1rem 0 1rem 1.5rem;
+      font-style: italic;
+    }
+
+    blockquote p {
+      text-indent: -1.2rem;
+    }
+
+    /* --- TABLEAU ADAPTIF ET CHIFFRES TABULAIRES --- */
+    aside {
+      overflow-x: auto; /* Rend le tableau défilable de manière transparente sur mobile */
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    /* Activation forcée des chiffres alignés et tabulaires pour la comptabilité */
+    tbody {
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    th, td {
+      border-bottom: 1px solid #e0dacb;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+
+    th {
+      font-variant-caps: small-caps;
+      background-color: #f5f0e1;
+      font-weight: 600;
+    }
+
+    /* Alignement à droite pour les données financières ou quantitatives */
+    td:nth-child(3), 
+    td:nth-child(4),
+    th:nth-child(3),
+    th:nth-child(4) {
+      text-align: right;
+    }
+
+    footer {
+      border-top: 1px solid #e0dacb;
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Démonstration de Haute Typographie Française</h1>
+    <p>Un manifeste pour le web sémantique et la mise en page intrinsèque.</p>
+  </header>
+
+  <main>
+    <article>
+      <section>
+        <h2>Principes Généraux de Composition</h2>
+        <p>
+          Le raffinement d’une page web repose grandement sur le respect des traditions de l’Imprimerie nationale. En utilisant la police <abbr>EB Garamond</abbr>, nous redonnons vie aux détails subtils du <abbr>xvi</abbr><sup>e</sup>&#8239;siècle. Regardez attentivement ce paragraphe&nbsp;: les chiffres ne s’alignent pas de manière rigide, ils possèdent des hauteurs variées. Par exemple, en l’an 1530 ou lors de la crise de 1929, les caractères s’intègrent harmonieusement à la ligne de texte sous forme de chiffres elzéviriens ou suspendus.
+        </p>
+      </section>
+
+      <section>
+        <h2>Nombres Ordinaux et Numéros</h2>
+        <p>
+          L’expression des ordres hiérarchiques obéit également à des normes codifiées. Nous écrivons ainsi le 1<sup>er</sup> volume d’une collection, suivi du 2<sup>e</sup> tome et enfin du 3<sup>e</sup> opus. L’usage de suffixes erronés comme «&#8239;2<sup>ème</sup>&#8239;» est à proscrire. De la même manière, l’abréviation du mot <em>numéro</em> ne s’écrit pas avec le symbole du degré («&#8239;N°&#8239;»), mais bien à l’aide d’un véritable exposant, comme dans le cas du bon de commande N<sup>o</sup>&#8239;45.
+        </p>
+      </section>
+
+      <section>
+        <h2>Guillemets en Chevrons et Structure Spatiale</h2>
+        <p>
+          L’usage des guillemets droits ou anglais est proscrit dans le texte courant. La langue française exige des guillemets en chevrons, impérativement séparés de leur contenu par une espace fine insécable. On écrira ainsi&nbsp;: L’auteur rappelle dans son essai que <q>«&#8239;la typographie est l’art d’architecturer la pensée&#8239;»</q>. Lors d’un échange ou d’une citation imbriquée, le tiret cadratin prend le relais pour structurer la réplique&nbsp;:
+        </p>
+        
+        <blockquote>
+          <p>—&#8239;Avez-vous intégré les espaces fines avant le point d’interrogation&#8239;? demanda M<sup>me</sup> de Rénal.</p>
+          <p>—&#8239;Bien sûr&#8239;! répondit le jeune secrétaire. L’éditeur m’a expressément répété&nbsp;: <q>«&#8239;N’oubliez jamais que les chevrons exigent le même traitement que les points d’exclamation&#8239;»</q>.</p>
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Abréviations, Exposants et Micro-typographie</h2>
+        <p>
+          En bonne typographie française, les abréviations des titres de civilité ne s’écrivent pas en caractères surélevés simulés, mais bien en utilisant les variantes OpenType de qualité supérieure fournies par la police. Nous croisons ainsi dans le protocole&nbsp;: M<sup>me</sup> de Maintenon, la jeune M<sup>lle</sup> de Scudéry, ou encore M<sup>gr</sup> l’archevêque. Remarquez que la lettre de l’exposant conserve la même graisse visuelle que le reste du mot, préservant la couleur grise uniforme du bloc.
+        </p>
+        <p>
+          L’intégration d’une espace fine insécable (<code>&#38;#8239;</code>) reste obligatoire avant les points d’exclamation&#8239;!, d’interrogation&#8239;? ou les points-virgules&#8239;; tandis qu’une espace insécable normale (<code>&amp;nbsp;</code>) préface le deux-points&nbsp;: elle empêche mécaniquement le symbole de se retrouver orphelin au début d'une ligne. C’est également indispensable pour séparer les groupes de trois chiffres dans les grands nombres, comme pour exprimer une distance de 149&#8239;597&#8239;870&#8239;km.
+        </p>
+      </section>
+
+      <section>
+        <h2>Chiffres Tabulaires et Tableaux de Données</h2>
+        <p>
+          Si les chiffres elzéviriens conviennent parfaitement à la lecture fluide d’un roman, ils deviennent illisibles lorsqu’il faut aligner des données comptables. Dans le tableau ci-dessous, enveloppé dans une balise de contenu connexe, les chiffres reprennent une hauteur identique et occupent tous la même largeur. Cela permet un alignement vertical parfait des unités, des dizaines et des centaines.
+        </p>
+
+        <!-- ASIDE permet un scroll horizontal propre si le tableau dépasse sur petit écran -->
+        <aside>
+          <table>
+            <thead>
+              <tr>
+                <th>Désignation de la pièce</th>
+                <th>Identifiant</th>
+                <th>Quantité</th>
+                <th>Prix unitaire (HT)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reliure plein cuir <abbr>in-octavo</abbr></td>
+                <td>REF-84920</td>
+                <td>12</td>
+                <td>145,50&#8239;€</td>
+              </tr>
+              <tr>
+                <td>Encre d’Italie d’ornement (flacon)</td>
+                <td>REF-00112</td>
+                <td>105</td>
+                <td>18,20&#8239;€</td>
+              </tr>
+              <tr>
+                <td>Plumes de calligraphie (lot de 5)</td>
+                <td>REF-77301</td>
+                <td>9</td>
+                <td>125,00&#8239;€</td>
+              </tr>
+              <tr>
+                <td>Papier vergé de chiffon (la rame)</td>
+                <td>REF-10944</td>
+                <td>1&#8239;250</td>
+                <td>94,00&#8239;€</td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+
+        <p>
+          Grâce au strict respect de l’héritage des propriétés <code>font-variant-*</code>, le tableau ci-dessus bascule de manière isolée en chiffres alignés sans perturber le comportement global du document.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>Feuille de style expérimentale — Aucun <abbr>id</abbr>, aucune classe, aucune division. Composé en <time>2026</time>.</p>
+  </footer>
+
+</body>
+</html>
